@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+
+    <!-- ===== Top bar: search, location, unit + theme toggles ===== -->
+    <header class="topbar">
+      <form id="search-form" class="search" role="search">
+        <input id="city-input" type="text" placeholder="Search city" aria-label="City name" autocomplete="off" />
+        <button type="submit">Search</button>
+      </form>
+      <div class="controls">
+        <button id="locate-btn" type="button">Use my location</button>
+        <button id="unit-btn" type="button" aria-label="Switch temperature unit">°C</button>
+        <button id="theme-btn" type="button" aria-label="Switch light or dark mode">Dark</button>
+      </div>
+    </header>
+
+    <!-- ===== Status messages (loading / error) ===== -->
+    <p id="status" class="status" role="status" hidden></p>
+
+    <!-- ===== Current weather ===== -->
+    <section id="current" class="current" hidden>
+      <p id="place" class="place"></p>
+      <div class="hero">
+        <span id="icon" class="icon" aria-hidden="true"></span>
+        <span id="temp" class="temp"></span>
+      </div>
+      <p id="condition" class="condition"></p>
+
+      <dl class="details">
+        <div><dt>Feels like</dt><dd id="feels"></dd></div>
+        <div><dt>Humidity</dt><dd id="humidity"></dd></div>
+        <div><dt>Wind</dt><dd id="wind"></dd></div>
+        <div><dt>Pressure</dt><dd id="pressure"></dd></div>
+      </dl>
+    </section>
+
+    <!-- ===== 5-day forecast ===== -->
+    <section id="forecast-wrap" hidden>
+      <h2>Next 5 days</h2>
+      <ul id="forecast" class="forecast"></ul>
+    </section>
+
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
